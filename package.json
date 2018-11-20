@@ -15,7 +15,7 @@
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
   },
-  "homepage": "https://ks89.github.io/angular-modal-gallery-2018-v6.github.io/",
+  "homepage": "",
   "peerDependencies": {
     "@angular/common": ">=5.0.0",
     "@angular/core": ">=5.0.0",
@@ -47,10 +47,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ks89/angular-modal-gallery.git"
+    "url": "git+https://github.com/FrancescoGrazioso/angular-modal-gallery.git"
   },
   "bugs": {
-    "url": "https://github.com/Ks89/angular-modal-gallery/issues"
+    "url": "https://github.com/FrancescoGrazioso/angular-modal-gallery/issues"
   },
   "main": "index.ts",
   "scripts": {
