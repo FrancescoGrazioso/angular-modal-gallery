@@ -47,15 +47,15 @@ export { CurrentImageConfig } from './src/model/current-image-config.interface';
 
 export { LoadingConfig, LoadingType } from './src/model/loading-config.interface';
 
-export { KS_DEFAULT_ACCESSIBILITY_CONFIG } from './src/components/accessibility-default';
+export { fg_DEFAULT_ACCESSIBILITY_CONFIG } from './src/components/accessibility-default';
 export {
-  KS_DEFAULT_BTN_FULL_SCREEN,
-  KS_DEFAULT_BTN_CLOSE,
-  KS_DEFAULT_BTN_DELETE,
-  KS_DEFAULT_BTN_DOWNLOAD,
-  KS_DEFAULT_BTN_EXTURL,
-  // KS_DEFAULT_BTN_REFRESH,
-  KS_DEFAULT_SIZE
+  fg_DEFAULT_BTN_FULL_SCREEN,
+  fg_DEFAULT_BTN_CLOSE,
+  fg_DEFAULT_BTN_DELETE,
+  fg_DEFAULT_BTN_DOWNLOAD,
+  fg_DEFAULT_BTN_EXTURL,
+  // fg_DEFAULT_BTN_REFRESH,
+  fg_DEFAULT_SIZE
 } from './src/components/upper-buttons/upper-buttons-default';
 
 export {

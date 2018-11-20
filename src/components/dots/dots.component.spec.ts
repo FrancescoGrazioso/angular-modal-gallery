@@ -24,10 +24,10 @@ import { By } from '@angular/platform-browser';
 import { DotsComponent } from './dots.component';
 import { AccessibilityConfig } from '../../model/accessibility.interface';
 import { DotsConfig } from '../../model/dots-config.interface';
-import { KS_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
+import { fg_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
 import { InternalLibImage } from '../../model/image-internal.class';
 
-const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, KS_DEFAULT_ACCESSIBILITY_CONFIG);
+const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, fg_DEFAULT_ACCESSIBILITY_CONFIG);
 CUSTOM_ACCESSIBILITY.dotsContainerTitle = 'custom dotsContainerTitle';
 CUSTOM_ACCESSIBILITY.dotsContainerAriaLabel = 'custom dotsContainerAriaLabel';
 
@@ -106,7 +106,7 @@ describe('DotsComponent', () => {
     it(`should display dots (first one is active) based of the number of input images`, () => {
       const activeDotIndex = 0;
       comp.dotsConfig = DOTS_CONFIG_VISIBLE;
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[activeDotIndex];
       comp.images = IMAGES;
       comp.ngOnInit();
@@ -116,8 +116,8 @@ describe('DotsComponent', () => {
 
       const dotsContainer: DebugElement = element.query(By.css('nav.dots-container'));
       expect(dotsContainer.name).toBe('nav');
-      expect(dotsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
-      expect(dotsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
+      expect(dotsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
+      expect(dotsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
 
       const dots: DebugElement[] = dotsContainer.children;
       expect(dots.length).toBe(IMAGES.length);
@@ -133,14 +133,14 @@ describe('DotsComponent', () => {
           expect(dot.attributes['class']).toBe('inside dot');
           // or like above: expect(dot.classes).toEqual({'inside': true, 'dot': true});
         }
-        expect(dot.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
+        expect(dot.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
       });
     });
 
     it(`should display dots (first one is active), because by default dotsConfig are visible`, () => {
       const activeDotIndex = 0;
       comp.dotsConfig = undefined; // or null, or something not valid
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[activeDotIndex];
       comp.images = IMAGES;
       comp.ngOnInit();
@@ -150,8 +150,8 @@ describe('DotsComponent', () => {
 
       const dotsContainer: DebugElement = element.query(By.css('nav.dots-container'));
       expect(dotsContainer.name).toBe('nav');
-      expect(dotsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
-      expect(dotsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
+      expect(dotsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
+      expect(dotsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
 
       const dots: DebugElement[] = dotsContainer.children;
       expect(dots.length).toBe(IMAGES.length);
@@ -168,7 +168,7 @@ describe('DotsComponent', () => {
           expect(dot.attributes['class']).toBe('inside dot');
           // or like above: expect(dot.classes).toEqual({'inside': true, 'dot': true});
         }
-        expect(dot.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
+        expect(dot.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
       });
     });
 
@@ -203,7 +203,7 @@ describe('DotsComponent', () => {
           expect(dot.attributes['class']).toBe('inside dot');
           // or like above: expect(dot.classes).toEqual({'inside': true, 'dot': true});
         }
-        expect(dot.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
+        expect(dot.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
       });
     });
 
@@ -211,7 +211,7 @@ describe('DotsComponent', () => {
       const indexToClick = 1;
       const activeDotIndex = 0;
       comp.dotsConfig = DOTS_CONFIG_VISIBLE;
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[activeDotIndex];
       comp.images = IMAGES;
       comp.ngOnInit();
@@ -228,7 +228,7 @@ describe('DotsComponent', () => {
       const dots: DebugElement[] = dotsContainer.children;
       expect(dots.length).toBe(IMAGES.length);
 
-      // clicks on a dot
+      // clicfg on a dot
       dots[1].nativeElement.click();
     });
   });
@@ -237,7 +237,7 @@ describe('DotsComponent', () => {
 
     it(`shouldn't display dots, because visibility is false.`, () => {
       comp.dotsConfig = DOTS_CONFIG_HIDDEN;
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.ngOnInit();
       fixture.detectChanges();
 
@@ -245,15 +245,15 @@ describe('DotsComponent', () => {
 
       const dotsContainer: DebugElement = element.query(By.css('nav.dots-container'));
       expect(dotsContainer.name).toBe('nav');
-      expect(dotsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
-      expect(dotsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
+      expect(dotsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
+      expect(dotsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
 
       const dots: DebugElement[] = element.queryAll(By.css('div.inside.dot'));
       expect(dots.length).toBe(0);
     });
 
     it(`shouldn't display dots, because the array of images as input is empty`, () => {
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = null;
       comp.images = [];
       comp.ngOnInit();
@@ -263,15 +263,15 @@ describe('DotsComponent', () => {
 
       const dotsContainer: DebugElement = element.query(By.css('nav.dots-container'));
       expect(dotsContainer.name).toBe('nav');
-      expect(dotsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
-      expect(dotsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
+      expect(dotsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
+      expect(dotsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
 
       const dots: DebugElement[] = dotsContainer.children;
       expect(dots.length).toBe(0);
     });
 
     it(`shouldn't display dots, because the array of images as input is not valid`, () => {
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = null;
       comp.images = null;
       comp.ngOnInit();
@@ -281,15 +281,15 @@ describe('DotsComponent', () => {
 
       const dotsContainer: DebugElement = element.query(By.css('nav.dots-container'));
       expect(dotsContainer.name).toBe('nav');
-      expect(dotsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
-      expect(dotsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
+      expect(dotsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
+      expect(dotsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
 
       const dots: DebugElement[] = dotsContainer.children;
       expect(dots.length).toBe(0);
     });
 
     it(`shouldn't display active dot when the currentImage is invalid, because 'isActive' method throws a managed error and return false`, () => {
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       // create a fake image not available in comp.images array
       comp.currentImage = new InternalLibImage(99, IMAGES[0].modal);
       comp.images = IMAGES;
@@ -300,8 +300,8 @@ describe('DotsComponent', () => {
 
       const dotsContainer: DebugElement = element.query(By.css('nav.dots-container'));
       expect(dotsContainer.name).toBe('nav');
-      expect(dotsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
-      expect(dotsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
+      expect(dotsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerAriaLabel);
+      expect(dotsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotsContainerTitle);
 
       const dots: DebugElement[] = dotsContainer.children;
       expect(dots.length).toBe(IMAGES.length);
@@ -312,7 +312,7 @@ describe('DotsComponent', () => {
         expect(dot.attributes['role']).toBe('navigation');
         expect(dot.properties['tabIndex']).toBe(0);
         expect(dot.attributes['class']).toBe('inside dot');
-        expect(dot.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
+        expect(dot.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.dotAriaLabel + ' ' + (index + 1));
       });
     });
   });

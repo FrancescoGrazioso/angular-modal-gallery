@@ -96,7 +96,7 @@ $description-color: white;
 
 #current-image {
   height: auto;
-  // Thanks to vh ad vw I can resize the image when reducing browser's window both vertically and horizontally
+  // Thanfg to vh ad vw I can resize the image when reducing browser's window both vertically and horizontally
   max-width: $curr-img-max-width;
   max-height: $curr-img-max-height;
   cursor: pointer;
@@ -107,7 +107,7 @@ $description-color: white;
 @media screen and (min-width: $curr-img-max-width-trick) {
   #current-image {
     height: auto;
-    // Thanks to vh ad vw I can resize the image when reducing browser's window both vertically and horizontally
+    // Thanfg to vh ad vw I can resize the image when reducing browser's window both vertically and horizontally
     max-width: $curr-img-max-width-trick;
     max-height: $curr-img-max-height;
     cursor: pointer;

@@ -32,7 +32,7 @@ import { DIRECTION_RIGHT, ENTER_KEY, MOUSE_MAIN_BUTTON_CLICK, NEXT, NOTHING, PRE
  * and another with also the direction (right or left).
  */
 @Component({
-  selector: 'ks-accessible',
+  selector: 'fg-accessible',
   template: ``,
   changeDetection: ChangeDetectionStrategy.OnPush
 })

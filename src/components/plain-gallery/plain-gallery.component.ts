@@ -39,7 +39,7 @@ import { getIndex } from '../../utils/image.util';
  * Also, it emits click events as outputs.
  */
 @Component({
-  selector: 'ks-plain-gallery',
+  selector: 'fg-plain-gallery',
   styleUrls: ['plain-gallery.scss'],
   templateUrl: 'plain-gallery.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -83,23 +83,23 @@ export class PlainGalleryComponent implements OnInit, OnChanges {
    */
   size: Size;
   /**
-   * Boolean passed as input to `ks-wrap` directive to configure flex-wrap css property.
+   * Boolean passed as input to `fg-wrap` directive to configure flex-wrap css property.
    * However it's not enough, because you need to limit the width using `widthStyle` public variable.
    * For more info check https://developer.mozilla.org/it/docs/Web/CSS/flex-wrap
    */
   wrapStyle = false;
   /**
-   * String passed as input to `ks-wrap` directive to set width to be able to force overflow.
+   * String passed as input to `fg-wrap` directive to set width to be able to force overflow.
    * In this way, `wrapStyle` (flex-wrap css property) will be used as requested.
    */
   widthStyle = '';
   /**
-   * String passed as input to `ks-direction` directive to set the flex-direction css property.
+   * String passed as input to `fg-direction` directive to set the flex-direction css property.
    * For more info check https://developer.mozilla.org/it/docs/Web/CSS/flex-direction
    */
   directionStyle: string;
   /**
-   * String passed as input to `ks-direction` directive to set the justify-content css property.
+   * String passed as input to `fg-direction` directive to set the justify-content css property.
    * For more info check https://developer.mozilla.org/it/docs/Web/CSS/justify-content
    */
   justifyStyle: string;

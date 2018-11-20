@@ -30,7 +30,7 @@ import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/c
  * an event using `@Output clickOutside`.
  */
 @Directive({
-  selector: '[ksClickOutside]'
+  selector: '[fgClickOutside]'
 })
 export class ClickOutsideDirective {
   /**
@@ -43,7 +43,7 @@ export class ClickOutsideDirective {
   @Output() clickOutside: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   /**
-   * Method called by Angular itself every click thanks to `@HostListener`.
+   * Method called by Angular itself every click thanfg to `@HostListener`.
    * @param MouseEvent event payload received evey click
    */
   @HostListener('click', ['$event'])

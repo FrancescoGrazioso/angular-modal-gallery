@@ -59,34 +59,34 @@ const expected: Description[] = [
 ];
 
 @Component({
-  selector: 'ks-test-description',
+  selector: 'fg-test-description',
   template: `
     <figure>
-      <figcaption ksDescription [description]="descriptions[0]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[0]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[1]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[1]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[2]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[2]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[3]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[3]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[4]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[4]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[5]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[5]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[6]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[6]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[7]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[7]"></figcaption>
     </figure>
     <figure>
-      <figcaption ksDescription [description]="descriptions[8]"></figcaption>
+      <figcaption fgDescription [description]="descriptions[8]"></figcaption>
     </figure>
   `
 })
@@ -140,7 +140,7 @@ describe('DescriptionDirective', () => {
     fixture.detectChanges();
     return fixture.whenStable().then(() => {
       fixture.detectChanges();
-      bareElement = fixture.debugElement.query(By.css('figcaption:not(ksDescription)'));
+      bareElement = fixture.debugElement.query(By.css('figcaption:not(fgDescription)'));
       des = fixture.debugElement.queryAll(By.directive(DescriptionDirective));
     });
   });
@@ -177,7 +177,7 @@ describe('DescriptionDirective', () => {
     });
 
     it('should check expected results for bare <figcaption> without this directive', () => {
-      expect(bareElement.properties['ksDescription']).toBeUndefined();
+      expect(bareElement.properties['fgDescription']).toBeUndefined();
     });
   });
 });

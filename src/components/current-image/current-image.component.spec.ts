@@ -20,7 +20,7 @@ import 'mousetrap';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement, SimpleChanges } from '@angular/core';
 import { By, SafeResourceUrl } from '@angular/platform-browser';
-import { KS_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
+import { fg_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
 import { InternalLibImage } from '../../model/image-internal.class';
 import { CurrentImageComponent } from './current-image.component';
 import { SizeDirective } from '../../directives/size.directive';
@@ -178,7 +178,7 @@ const TEST_MODEL_HIDEEMPTY_DESCRIPTIONS: TestModel[] = [
   })
 ];
 
-const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, KS_DEFAULT_ACCESSIBILITY_CONFIG);
+const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, fg_DEFAULT_ACCESSIBILITY_CONFIG);
 CUSTOM_ACCESSIBILITY.mainContainerTitle = 'custom mainContainerTitle';
 CUSTOM_ACCESSIBILITY.mainContainerAriaLabel = 'custom mainContainerAriaLabel';
 CUSTOM_ACCESSIBILITY.mainNextImageTitle = 'custom mainNextImageTitle';
@@ -310,9 +310,9 @@ function checkMainContainer() {
   const element: DebugElement = fixture.debugElement;
   const mainCurrentImage: DebugElement = element.query(By.css('main.main-image-container'));
   expect(mainCurrentImage.name).toBe('main');
-  expect(mainCurrentImage.attributes['ksKeyboardNavigation']).toBe('');
-  expect(mainCurrentImage.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainContainerTitle);
-  expect(mainCurrentImage.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainContainerAriaLabel);
+  expect(mainCurrentImage.attributes['fgKeyboardNavigation']).toBe('');
+  expect(mainCurrentImage.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainContainerTitle);
+  expect(mainCurrentImage.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainContainerAriaLabel);
 }
 
 function checkCurrentImage(currentImage: InternalLibImage, val: TestModel, withDescription: boolean = true) {
@@ -340,32 +340,32 @@ function checkArrows(isFirstImage: boolean, isLastImage: boolean) {
   const aNavLeft: DebugElement = element.query(By.css('a.nav-left'));
   expect(aNavLeft.name).toBe('a');
   expect(aNavLeft.attributes['role']).toBe('button');
-  expect(aNavLeft.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageAriaLabel);
+  expect(aNavLeft.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageAriaLabel);
   expect(aNavLeft.properties['tabIndex']).toBe(isFirstImage ? -1 : 0);
   const divNavLeft: DebugElement = aNavLeft.children[0];
   expect(divNavLeft.attributes['aria-hidden']).toBe('true');
   expect(divNavLeft.properties['className']).toBe('inside ' + (isFirstImage ? 'empty-arrow-image' : 'left-arrow-image'));
-  expect(divNavLeft.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageTitle);
+  expect(divNavLeft.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageTitle);
 
   const aNavRight: DebugElement = element.query(By.css('a.nav-right'));
   expect(aNavRight.name).toBe('a');
   expect(aNavRight.attributes['role']).toBe('button');
-  expect(aNavRight.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageAriaLabel);
+  expect(aNavRight.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageAriaLabel);
   expect(aNavRight.properties['tabIndex']).toBe(isLastImage ? -1 : 0);
   const divNavRight: DebugElement = aNavRight.children[0];
   expect(divNavRight.attributes['aria-hidden']).toBe('true');
   expect(divNavRight.properties['className']).toBe('inside ' + (isLastImage ? 'empty-arrow-image' : 'right-arrow-image'));
-  expect(divNavRight.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageTitle);
+  expect(divNavRight.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageTitle);
 }
 
-function checkSidePreviews(prevImage: InternalLibImage, nextImage: InternalLibImage,
+function checfgidePreviews(prevImage: InternalLibImage, nextImage: InternalLibImage,
                            isFirstImage: boolean, isLastImage: boolean, val: TestModel, size: Size = DEFAULT_SIZE) {
   const element: DebugElement = fixture.debugElement;
   const leftPreviewImage: DebugElement = element.query(By.css(isFirstImage
     ? 'div.current-image-previous.hidden'
     : 'img.inside.current-image-previous'));
   expect(leftPreviewImage.name).toBe(isFirstImage ? 'div' : 'img');
-  expect(leftPreviewImage.attributes['ksSize']).toBe('');
+  expect(leftPreviewImage.attributes['fgSize']).toBe('');
   if (!isFirstImage) {
     expect(leftPreviewImage.properties['src']).toBe(prevImage.plain ? prevImage.plain.img : prevImage.modal.img);
     expect(leftPreviewImage.properties['title']).toBe(val.leftPreviewTitle);
@@ -379,7 +379,7 @@ function checkSidePreviews(prevImage: InternalLibImage, nextImage: InternalLibIm
     ? 'div.current-image-next.hidden'
     : 'img.inside.current-image-next'));
   expect(rightPreviewImage.name).toBe(isLastImage ? 'div' : 'img');
-  expect(rightPreviewImage.attributes['ksSize']).toBe('');
+  expect(rightPreviewImage.attributes['fgSize']).toBe('');
   if (!isLastImage) {
     expect(rightPreviewImage.properties['src']).toBe(nextImage.plain ? nextImage.plain.img : nextImage.modal.img);
     expect(rightPreviewImage.properties['title']).toBe(val.rightPreviewTitle);
@@ -420,7 +420,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -447,7 +447,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -473,7 +473,7 @@ describe('CurrentImageComponent', () => {
         description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
       };
       comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.keyboardConfig = null;
       comp.ngOnChanges(<SimpleChanges>{
         currentImage: {
@@ -499,7 +499,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -514,7 +514,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[index], val);
         checkArrows(index === 0, index === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
 
         const element: DebugElement = fixture.debugElement;
         const currentImage: DebugElement = element.query(By.css('img#current-image'));
@@ -541,7 +541,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -556,7 +556,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[index], val);
         checkArrows(index === 0, index === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
 
         const element: DebugElement = fixture.debugElement;
         const rightPreviewImage: DebugElement = element.query(By.css(index === IMAGES.length - 1
@@ -588,7 +588,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -603,7 +603,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[currentIndex], val);
         checkArrows(currentIndex === 0, currentIndex === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[currentIndex - 1], IMAGES[currentIndex + 1], currentIndex === 0, currentIndex === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[currentIndex - 1], IMAGES[currentIndex + 1], currentIndex === 0, currentIndex === IMAGES.length - 1, val);
 
         const element: DebugElement = fixture.debugElement;
         const leftPreviewImage: DebugElement = element.query(By.css(currentIndex === 0
@@ -633,7 +633,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -648,7 +648,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[index], val);
         checkArrows(index === 0, index === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
 
         if (index !== IMAGES.length - 1) {
           comp.changeImage.subscribe((res: ImageModalEvent) => {
@@ -674,7 +674,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -689,7 +689,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[currentIndex], val);
         checkArrows(currentIndex === 0, currentIndex === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[currentIndex - 1], IMAGES[currentIndex + 1], currentIndex === 0, currentIndex === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[currentIndex - 1], IMAGES[currentIndex + 1], currentIndex === 0, currentIndex === IMAGES.length - 1, val);
 
         if (currentIndex !== 0) {
           comp.changeImage.subscribe((res: ImageModalEvent) => {
@@ -715,7 +715,7 @@ describe('CurrentImageComponent', () => {
           invertSwipe: true
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -730,7 +730,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[index], val);
         checkArrows(index === 0, index === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
 
         if (index !== IMAGES.length - 1) {
           comp.changeImage.subscribe((res: ImageModalEvent) => {
@@ -757,7 +757,7 @@ describe('CurrentImageComponent', () => {
           invertSwipe: true
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -772,7 +772,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[currentIndex], val);
         checkArrows(currentIndex === 0, currentIndex === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[currentIndex - 1], IMAGES[currentIndex + 1], currentIndex === 0, currentIndex === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[currentIndex - 1], IMAGES[currentIndex + 1], currentIndex === 0, currentIndex === IMAGES.length - 1, val);
 
         if (currentIndex !== 0) {
           comp.changeImage.subscribe((res: ImageModalEvent) => {
@@ -797,7 +797,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.ALWAYS_HIDDEN}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -812,7 +812,7 @@ describe('CurrentImageComponent', () => {
         checkMainContainer();
         checkCurrentImage(IMAGES[index], val, false);
         checkArrows(index === 0, index === IMAGES.length - 1);
-        checkSidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
+        checfgidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
       });
     });
 
@@ -826,7 +826,7 @@ describe('CurrentImageComponent', () => {
           description: <Description>{strategy: DescriptionStrategy.HIDE_IF_EMPTY}
         };
         comp.slideConfig = <SlideConfig>{infinite: false, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.keyboardConfig = null;
         comp.ngOnChanges(<SimpleChanges>{
           currentImage: {
@@ -842,7 +842,7 @@ describe('CurrentImageComponent', () => {
         const imageWithoutDescription: boolean = !IMAGES[index].modal || !IMAGES[index].modal.description || IMAGES[index].modal.description === '';
         // checkCurrentImage(IMAGES[index], val, !imageWithoutDescription);
         // checkArrows(index === 0, index === IMAGES.length - 1);
-        // checkSidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
+        // checfgidePreviews(IMAGES[index - 1], IMAGES[index + 1], index === 0, index === IMAGES.length - 1, val);
       });
     });
 
@@ -857,7 +857,7 @@ describe('CurrentImageComponent', () => {
             description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
           };
           comp.slideConfig = slideConfig;
-          comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+          comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
           comp.keyboardConfig = null;
           comp.ngOnChanges(<SimpleChanges>{
             currentImage: {
@@ -872,7 +872,7 @@ describe('CurrentImageComponent', () => {
           checkMainContainer();
           checkCurrentImage(IMAGES[index], val);
           checkArrows(index === 0, index === IMAGES.length - 1);
-          checkSidePreviews(IMAGES[index - 1], IMAGES[index + 1],
+          checfgidePreviews(IMAGES[index - 1], IMAGES[index + 1],
             index === 0, index === IMAGES.length - 1,
             val, slideConfig.sidePreviews ? slideConfig.sidePreviews.size : DEFAULT_SIZE);
         });
@@ -890,7 +890,7 @@ describe('CurrentImageComponent', () => {
             description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
           };
           comp.slideConfig = slideConfig;
-          comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+          comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
           comp.keyboardConfig = null;
           comp.ngOnChanges(<SimpleChanges>{
             currentImage: {
@@ -906,7 +906,7 @@ describe('CurrentImageComponent', () => {
           checkCurrentImage(IMAGES[index], val);
           checkArrows((index === 0) && !slideConfig.infinite, (index === IMAGES.length - 1) && !slideConfig.infinite);
           if (slideConfig.sidePreviews) {
-            checkSidePreviews(
+            checfgidePreviews(
               index === 0 ? IMAGES[IMAGES.length - 1] : IMAGES[index - 1],
               index === IMAGES.length - 1 ? IMAGES[0] : IMAGES[index + 1],
               (index === 0) && !slideConfig.infinite, (index === IMAGES.length - 1) && !slideConfig.infinite,
@@ -928,7 +928,7 @@ describe('CurrentImageComponent', () => {
             description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
           };
           comp.slideConfig = slideConfig;
-          comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+          comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
           comp.keyboardConfig = null;
           comp.ngOnChanges(<SimpleChanges>{
             currentImage: {
@@ -990,26 +990,26 @@ describe('CurrentImageComponent', () => {
           const aNavLeft: DebugElement = element.query(By.css('a.nav-left'));
           expect(aNavLeft.name).toBe('a');
           expect(aNavLeft.attributes['role']).toBe('button');
-          expect(aNavLeft.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageAriaLabel);
+          expect(aNavLeft.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageAriaLabel);
           // FIXME restore this
           // expect(aNavLeft.properties['tabIndex']).toBe(isFirstImage ? -1 : 0);
           const divNavLeft: DebugElement = aNavLeft.children[0];
           expect(divNavLeft.attributes['aria-hidden']).toBe('true');
           // FIXME restore this
           // expect(divNavLeft.properties['className']).toBe('inside ' + (isFirstImage ? 'empty-arrow-image' : 'left-arrow-image'));
-          expect(divNavLeft.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageTitle);
+          expect(divNavLeft.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainPrevImageTitle);
 
           const aNavRight: DebugElement = element.query(By.css('a.nav-right'));
           expect(aNavRight.name).toBe('a');
           expect(aNavRight.attributes['role']).toBe('button');
-          expect(aNavRight.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageAriaLabel);
+          expect(aNavRight.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageAriaLabel);
           // FIXME restore this
           // expect(aNavRight.properties['tabIndex']).toBe(isLastImage ? -1 : 0);
           const divNavRight: DebugElement = aNavRight.children[0];
           expect(divNavRight.attributes['aria-hidden']).toBe('true');
           // FIXME restore this
           // expect(divNavRight.properties['className']).toBe('inside ' + (isLastImage ? 'empty-arrow-image' : 'right-arrow-image'));
-          expect(divNavRight.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageTitle);
+          expect(divNavRight.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.mainNextImageTitle);
 
           // no side previews
           const leftPreviewImage: DebugElement = element.query(By.css((index === 0) && !slideConfig.infinite
@@ -1070,7 +1070,7 @@ describe('CurrentImageComponent', () => {
         description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
       };
       comp.slideConfig = <SlideConfig>{infinite: infiniteSliding, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.keyboardConfig = null;
       comp.ngOnChanges(<SimpleChanges>{
         currentImage: {
@@ -1085,7 +1085,7 @@ describe('CurrentImageComponent', () => {
       checkMainContainer();
       checkCurrentImage(IMAGES[index], TEST_MODEL_INFINITE[TEST_MODEL_INFINITE.length - 1]);
       checkArrows(index === 0 && !infiniteSliding, (index === IMAGES.length - 1) && !infiniteSliding);
-      checkSidePreviews(IMAGES[index - 1], IMAGES[0],
+      checfgidePreviews(IMAGES[index - 1], IMAGES[0],
         index === 0 && !infiniteSliding, (index === IMAGES.length - 1) && !infiniteSliding, TEST_MODEL_INFINITE[TEST_MODEL_INFINITE.length - 1]);
 
       comp.changeImage.subscribe((res: ImageModalEvent) => {
@@ -1105,7 +1105,7 @@ describe('CurrentImageComponent', () => {
         description: <Description>{strategy: DescriptionStrategy.ALWAYS_VISIBLE}
       };
       comp.slideConfig = <SlideConfig>{infinite: infiniteSliding, sidePreviews: {show: true, size: DEFAULT_SIZE}};
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.keyboardConfig = null;
       comp.ngOnChanges(<SimpleChanges>{
         currentImage: {
@@ -1120,7 +1120,7 @@ describe('CurrentImageComponent', () => {
       checkMainContainer();
       checkCurrentImage(IMAGES[index], TEST_MODEL_INFINITE[0]);
       checkArrows(index === 0 && !infiniteSliding, (index === IMAGES.length - 1) && !infiniteSliding);
-      checkSidePreviews(IMAGES[IMAGES.length - 1], IMAGES[index + 1],
+      checfgidePreviews(IMAGES[IMAGES.length - 1], IMAGES[index + 1],
         index === 0 && !infiniteSliding, (index === IMAGES.length - 1) && !infiniteSliding, TEST_MODEL_INFINITE[0]);
 
       comp.changeImage.subscribe((res: ImageModalEvent) => {

@@ -22,7 +22,7 @@ import { DebugElement, SimpleChanges } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 import { AccessibilityConfig } from '../../model/accessibility.interface';
-import { KS_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
+import { fg_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
 import { InternalLibImage } from '../../model/image-internal.class';
 import { PreviewsComponent } from './previews.component';
 import { PreviewConfig } from '../../model/preview-config.interface';
@@ -30,7 +30,7 @@ import { SlideConfig } from '../../model/slide-config.interface';
 import { Size } from '../../model/size.interface';
 import { ModalImage, PlainImage } from '../../model/image.class';
 import { SizeDirective } from '../../directives/size.directive';
-import { KS_DEFAULT_SIZE } from '../upper-buttons/upper-buttons-default';
+import { fg_DEFAULT_SIZE } from '../upper-buttons/upper-buttons-default';
 
 interface NavigationTestData {
   initial: {
@@ -48,7 +48,7 @@ interface NavigationTestData {
 let comp: PreviewsComponent;
 let fixture: ComponentFixture<PreviewsComponent>;
 
-const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, KS_DEFAULT_ACCESSIBILITY_CONFIG);
+const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, fg_DEFAULT_ACCESSIBILITY_CONFIG);
 CUSTOM_ACCESSIBILITY.previewsContainerAriaLabel = 'custom previewsContainerAriaLabel';
 CUSTOM_ACCESSIBILITY.previewsContainerTitle = 'custom previewsContainerTitle';
 CUSTOM_ACCESSIBILITY.previewScrollNextAriaLabel = 'custom previewScrollNextAriaLabel';
@@ -66,7 +66,7 @@ const PREVIEWS_CONFIG_VISIBLE: PreviewConfig = {visible: true};
 const SLIDE_CONFIG_INFINITE: SlideConfig = {infinite: true};
 const PREVIEWS_CONFIG_HIDDEN: PreviewConfig = {visible: false};
 
-const SLIDE_CONFIG: SlideConfig = {infinite: false, sidePreviews: {show: true, size: KS_DEFAULT_SIZE}};
+const SLIDE_CONFIG: SlideConfig = {infinite: false, sidePreviews: {show: true, size: fg_DEFAULT_SIZE}};
 
 
 const IMAGES: InternalLibImage[] = [
@@ -146,7 +146,7 @@ const NAVIGATION_PREV_PREVIEWS: NavigationTestData[] = [
 ];
 
 function checkArrows(arrows: DebugElement[], first: boolean, last: boolean,
-                     accessibility: AccessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG) {
+                     accessibility: AccessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG) {
   const prevArrowClass = first ? 'inside empty-arrow-preview-image' : 'inside left-arrow-preview-image';
   const nextArrowClass = last ? 'inside empty-arrow-preview-image' : 'inside right-arrow-preview-image';
   expect(arrows.length).toBe(2);
@@ -172,7 +172,7 @@ function checkPreview(previewElement: DebugElement, previewImage: InternalLibIma
   expect(previewElement.name).toBe('img');
   expect(previewElement.attributes['role']).toBe('img');
   expect(previewElement.attributes['aria-label']).toBe(currentModalImg.ariaLabel ? currentModalImg.ariaLabel : '');
-  expect(previewElement.attributes['ksSize']).toBe('');
+  expect(previewElement.attributes['fgSize']).toBe('');
   expect(previewElement.styles.width).toBe(size.width);
   expect(previewElement.styles.height).toBe(size.height);
   expect(previewElement.properties['className']).toBe('inside preview-image ' + (isActive ? 'active' : ''));
@@ -223,7 +223,7 @@ describe('PreviewsComponent', () => {
       const initialActiveImage = 0;
       const numOfPreviews = 3;
       comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[initialActiveImage];
       comp.images = IMAGES;
       comp.slideConfig = SLIDE_CONFIG;
@@ -237,8 +237,8 @@ describe('PreviewsComponent', () => {
 
       const previewsContainer: DebugElement = element.query(By.css('nav.previews-container'));
       expect(previewsContainer.name).toBe('nav');
-      expect(previewsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
-      expect(previewsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
+      expect(previewsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
+      expect(previewsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
 
       const previews: DebugElement[] = element.queryAll(By.css('img'));
       expect(previews.length).toBe(numOfPreviews);
@@ -255,7 +255,7 @@ describe('PreviewsComponent', () => {
       const initialActiveImage = 2; // you can use every value except for 0 and the last one
       const numOfPreviews = 3;
       comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[initialActiveImage];
       comp.images = IMAGES;
       comp.slideConfig = SLIDE_CONFIG;
@@ -269,8 +269,8 @@ describe('PreviewsComponent', () => {
 
       const previewsContainer: DebugElement = element.query(By.css('nav.previews-container'));
       expect(previewsContainer.name).toBe('nav');
-      expect(previewsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
-      expect(previewsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
+      expect(previewsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
+      expect(previewsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
 
       const previews: DebugElement[] = element.queryAll(By.css('img'));
       expect(previews.length).toBe(numOfPreviews);
@@ -287,7 +287,7 @@ describe('PreviewsComponent', () => {
       const initialActiveImage = IMAGES.length - 1;
       const numOfPreviews = 3;
       comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[initialActiveImage];
       comp.images = IMAGES;
       comp.slideConfig = SLIDE_CONFIG;
@@ -301,8 +301,8 @@ describe('PreviewsComponent', () => {
 
       const previewsContainer: DebugElement = element.query(By.css('nav.previews-container'));
       expect(previewsContainer.name).toBe('nav');
-      expect(previewsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
-      expect(previewsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
+      expect(previewsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
+      expect(previewsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
 
       const previews: DebugElement[] = element.queryAll(By.css('img'));
       expect(previews.length).toBe(numOfPreviews);
@@ -351,7 +351,7 @@ describe('PreviewsComponent', () => {
       const initialActiveImage = 0;
       const numOfPreviews = 2;
       comp.previewConfig = {visible: true, number: 2, arrows: false};
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[initialActiveImage];
       comp.images = IMAGES;
       comp.slideConfig = SLIDE_CONFIG;
@@ -366,8 +366,8 @@ describe('PreviewsComponent', () => {
 
       const previewsContainer: DebugElement = element.query(By.css('nav.previews-container'));
       expect(previewsContainer.name).toBe('nav');
-      expect(previewsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
-      expect(previewsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
+      expect(previewsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
+      expect(previewsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
 
       const previews: DebugElement[] = element.queryAll(By.css('img'));
       expect(previews.length).toBe(numOfPreviews);
@@ -384,7 +384,7 @@ describe('PreviewsComponent', () => {
         const initialActiveImage = 0;
         const numOfPreviews = 3;
         comp.previewConfig = {visible: true, size: size};
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.currentImage = IMAGES[initialActiveImage];
         comp.images = IMAGES;
         comp.slideConfig = SLIDE_CONFIG;
@@ -398,8 +398,8 @@ describe('PreviewsComponent', () => {
 
         const previewsContainer: DebugElement = element.query(By.css('nav.previews-container'));
         expect(previewsContainer.name).toBe('nav');
-        expect(previewsContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
-        expect(previewsContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
+        expect(previewsContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerAriaLabel);
+        expect(previewsContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.previewsContainerTitle);
 
         const previews: DebugElement[] = element.queryAll(By.css('img'));
         expect(previews.length).toBe(numOfPreviews);
@@ -417,7 +417,7 @@ describe('PreviewsComponent', () => {
       const numOfPreviews = 3;
       const afterClickActivePreview = 0;
       comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.currentImage = IMAGES[initialActiveImage];
       comp.images = IMAGES;
       comp.slideConfig = SLIDE_CONFIG;
@@ -451,7 +451,7 @@ describe('PreviewsComponent', () => {
     //   const afterClickActivePreview = 0;
     //   const numberOfVisiblePreviews = 3;
     //   comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-    //   comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+    //   comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
     //   comp.currentImage = IMAGES[initialActivePreview];
     //   comp.images = IMAGES;
     //   comp.slideConfig = SLIDE_CONFIG;
@@ -484,7 +484,7 @@ describe('PreviewsComponent', () => {
     NAVIGATION_NEXT_PREVIEWS.forEach((val: NavigationTestData, index: number) => {
       it(`should navigate previews clicking on left arrow. Test i=${index}`, async(() => {
         comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.currentImage = IMAGES[val.initial.activeIndex];
         comp.images = IMAGES;
         comp.slideConfig = SLIDE_CONFIG;
@@ -537,7 +537,7 @@ describe('PreviewsComponent', () => {
     // NAVIGATION_PREV_PREVIEWS.forEach((val: NavigationTestData, index: number) => {
     //   it(`should navigate back previews clicking on right arrow. Test i=${index}`, async(() => {
     //     comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-    //     comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+    //     comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
     //     comp.currentImage = IMAGES[val.initial.activeIndex];
     //     comp.images = IMAGES;
     //     comp.slideConfig = SLIDE_CONFIG;
@@ -589,7 +589,7 @@ describe('PreviewsComponent', () => {
     [SLIDE_CONFIG, SLIDE_CONFIG_INFINITE].forEach((slideConfig: SlideConfig, index: number) => {
       it(`should navigate next/prev clicking on images for all SlideConfigs. Test i=${index}`, async(() => {
         comp.previewConfig = PREVIEWS_CONFIG_VISIBLE;
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.currentImage = IMAGES[0];
         comp.images = IMAGES;
         comp.slideConfig = slideConfig;

@@ -30,7 +30,7 @@ export interface KeyboardServiceConfig {
   shortcuts: Array<string> | string;
 
   // this is a workaround requested by @mlc-mlapis here:
-  // https://github.com/Ks89/angular-modal-gallery/issues/142
+  // https://github.com/fg89/angular-modal-gallery/issues/142
   // I don't want to document this, because it will be removed when a it will be available window mock on server-side
   disableSsrWorkaround?: boolean;
 }

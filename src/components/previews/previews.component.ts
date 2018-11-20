@@ -40,7 +40,7 @@ import { getIndex } from '../../utils/image.util';
  * Component with image previews
  */
 @Component({
-  selector: 'ks-previews',
+  selector: 'fg-previews',
   styleUrls: ['previews.scss', 'previews-arrows.scss'],
   templateUrl: 'previews.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -101,7 +101,7 @@ export class PreviewsComponent extends AccessibleComponent implements OnInit, On
   end: number;
 
   /**
-   * Default preview's size object, also used in the template to apply default sizes to ksSize's directive.
+   * Default preview's size object, also used in the template to apply default sizes to fgSize's directive.
    */
   defaultPreviewSize: Size = { height: '50px', width: 'auto' };
 

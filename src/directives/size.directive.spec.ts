@@ -40,16 +40,16 @@ const expected: Size[] = [
 ];
 
 @Component({
-  selector: 'ks-test-size',
+  selector: 'fg-test-size',
   template: `
-    <div ksSize [sizeConfig]="{width: '100px', height: '80px'}"></div>
-    <div ksSize [sizeConfig]="{width: '50px', height: '20px'}"></div>
-    <div ksSize [sizeConfig]="{width: '50%', height: '100%'}"></div>
-    <div ksSize [sizeConfig]="{width: 'auto', height: 'auto'}"></div>
-    <div ksSize [sizeConfig]="{width: 'auto', height: '20px'}"></div>
-    <div ksSize [sizeConfig]="{width: '50px', height: 'auto'}"></div>
-    <div ksSize [sizeConfig]="{width: '', height: ''}"></div>
-    <div ksSize [sizeConfig]="null"></div>
+    <div fgSize [sizeConfig]="{width: '100px', height: '80px'}"></div>
+    <div fgSize [sizeConfig]="{width: '50px', height: '20px'}"></div>
+    <div fgSize [sizeConfig]="{width: '50%', height: '100%'}"></div>
+    <div fgSize [sizeConfig]="{width: 'auto', height: 'auto'}"></div>
+    <div fgSize [sizeConfig]="{width: 'auto', height: '20px'}"></div>
+    <div fgSize [sizeConfig]="{width: '50px', height: 'auto'}"></div>
+    <div fgSize [sizeConfig]="{width: '', height: ''}"></div>
+    <div fgSize [sizeConfig]="null"></div>
   `
 })
 class TestSizeComponent {}
@@ -72,7 +72,7 @@ describe('SizeDirective', () => {
     fixture.detectChanges();
     return fixture.whenStable().then(() => {
       fixture.detectChanges();
-      bareElement = fixture.debugElement.query(By.css('div:not(ksSize)'));
+      bareElement = fixture.debugElement.query(By.css('div:not(fgSize)'));
       des = fixture.debugElement.queryAll(By.directive(SizeDirective));
     });
   });
@@ -95,7 +95,7 @@ describe('SizeDirective', () => {
     });
 
     it('should check expected results for bare <div> without this directive', () => {
-      expect(bareElement.properties['ksSize']).toBeUndefined();
+      expect(bareElement.properties['fgSize']).toBeUndefined();
     });
   });
 });

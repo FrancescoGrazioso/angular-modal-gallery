@@ -28,10 +28,10 @@ import { ClickOutsideDirective } from './click-outside.directive';
 import { By } from '@angular/platform-browser';
 
 @Component({
-  selector: 'ks-test-click-outside',
+  selector: 'fg-test-click-outside',
   template: `
     <div id="modal-gallery-wrapper"
-         ksClickOutside [clickOutsideEnable]="enableCloseOutside"
+         fgClickOutside [clickOutsideEnable]="enableCloseOutside"
          (clickOutside)="onClickOutside($event)">
 
       <div class="ng-overlay"></div>
@@ -89,11 +89,11 @@ describe('ClickOutsideDirective', () => {
   describe('---click outside---', () => {
     beforeEach(() => fixture.detectChanges());
 
-    it(`should check for ksClickOutside`, () => {
+    it(`should check for fgClickOutside`, () => {
       const clickOutsideDirective: DebugElement = fixture.debugElement.query(By.directive(ClickOutsideDirective));
       expect(clickOutsideDirective.name).toBe('div');
       expect(clickOutsideDirective.attributes['id']).toBe('modal-gallery-wrapper');
-      expect(clickOutsideDirective.attributes['ksClickOutside']).toBe('');
+      expect(clickOutsideDirective.attributes['fgClickOutside']).toBe('');
     });
 
     it(`should close the modal gallery after a click`, () => {

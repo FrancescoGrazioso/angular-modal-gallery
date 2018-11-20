@@ -27,10 +27,10 @@ import { By } from '@angular/platform-browser';
 import { WrapDirective } from './wrap.directive';
 
 @Component({
-  selector: 'ks-test-wrap',
+  selector: 'fg-test-wrap',
   template: `
-    <div ksWrap [wrap]="true" [width]="'100px'"></div>
-    <div ksWrap [wrap]="false" [width]="'100px'"></div>
+    <div fgWrap [wrap]="true" [width]="'100px'"></div>
+    <div fgWrap [wrap]="false" [width]="'100px'"></div>
   `
 })
 class TestWrapComponent {}
@@ -58,7 +58,7 @@ describe('WrapDirective', () => {
     fixture.detectChanges();
     return fixture.whenStable().then(() => {
       fixture.detectChanges();
-      bareElement = fixture.debugElement.query(By.css('div:not(ksWrap)'));
+      bareElement = fixture.debugElement.query(By.css('div:not(fgWrap)'));
       des = fixture.debugElement.queryAll(By.directive(WrapDirective));
     });
   });
@@ -81,7 +81,7 @@ describe('WrapDirective', () => {
     });
 
     it('should check expected results for bare <div> without this directive', () => {
-      expect(bareElement.properties['ksWrap']).toBeUndefined();
+      expect(bareElement.properties['fgWrap']).toBeUndefined();
     });
   });
 });

@@ -42,17 +42,17 @@ const expected: any[] = [
 ];
 
 @Component({
-  selector: 'ks-test-direction',
+  selector: 'fg-test-direction',
   template: `
-    <div ksDirection [direction]="'row'" [justify]="'flex-start'"></div>
-    <div ksDirection [direction]="'row-reverse'" [justify]="'flex-end'"></div>
-    <div ksDirection [direction]="'column'" [justify]="'center'"></div>
-    <div ksDirection [direction]="'column-reverse'" [justify]="'space-between'"></div>
-    <div ksDirection [direction]="'row'" [justify]="'space-around'"></div>
-    <div ksDirection [direction]="'row'" [justify]="'space-evenly'"></div>
-    <div ksDirection [direction]="''" [justify]="''"></div>
-    <div ksDirection [direction]="''" [justify]="'center'"></div>
-    <div ksDirection [direction]="'row'" [justify]="''"></div>
+    <div fgDirection [direction]="'row'" [justify]="'flex-start'"></div>
+    <div fgDirection [direction]="'row-reverse'" [justify]="'flex-end'"></div>
+    <div fgDirection [direction]="'column'" [justify]="'center'"></div>
+    <div fgDirection [direction]="'column-reverse'" [justify]="'space-between'"></div>
+    <div fgDirection [direction]="'row'" [justify]="'space-around'"></div>
+    <div fgDirection [direction]="'row'" [justify]="'space-evenly'"></div>
+    <div fgDirection [direction]="''" [justify]="''"></div>
+    <div fgDirection [direction]="''" [justify]="'center'"></div>
+    <div fgDirection [direction]="'row'" [justify]="''"></div>
   `
 })
 class TestDirectionComponent {}
@@ -75,7 +75,7 @@ describe('DirectionDirective', () => {
     fixture.detectChanges();
     return fixture.whenStable().then(() => {
       fixture.detectChanges();
-      bareElement = fixture.debugElement.query(By.css('div:not(ksDirection)'));
+      bareElement = fixture.debugElement.query(By.css('div:not(fgDirection)'));
       des = fixture.debugElement.queryAll(By.directive(DirectionDirective));
     });
   });
@@ -98,7 +98,7 @@ describe('DirectionDirective', () => {
     });
 
     it('should check expected results for bare <div> without this directive', () => {
-      expect(bareElement.properties['ksDirection']).toBeUndefined();
+      expect(bareElement.properties['fgDirection']).toBeUndefined();
     });
   });
 });

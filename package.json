@@ -6,7 +6,7 @@
     "lib": {
       "entryFile": "index.ts"
     },
-    "dest": "../../@ks89/angular-modal-gallery"
+    "dest": "../../@fg89/angular-modal-gallery"
   },
   "description": "Modal image gallery for Angular >=5",
   "license": "MIT",

@@ -30,7 +30,7 @@ import { AccessibilityConfig } from '../../model/accessibility.interface';
  * Component with the semi-transparent background.
  */
 @Component({
-  selector: 'ks-background',
+  selector: 'fg-background',
   styleUrls: ['background.scss'],
   templateUrl: 'background.html',
   changeDetection: ChangeDetectionStrategy.OnPush

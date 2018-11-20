@@ -54,7 +54,7 @@ export interface ImageLoadEvent {
  * Component with the current image with some additional elements like arrows and side previews.
  */
 @Component({
-  selector: 'ks-current-image',
+  selector: 'fg-current-image',
   styleUrls: ['current-image.scss', 'current-image-arrows.scss', 'current-image-previews.scss'],
   templateUrl: 'current-image.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -474,7 +474,7 @@ export class CurrentImageComponent extends AccessibleComponent implements OnInit
 
   /**
    * Private method to check if next/prev actions should be blocked.
-   * It checks if slideConfig.infinite === false and if the image index is equals to the input parameter.
+   * It checfg if slideConfig.infinite === false and if the image index is equals to the input parameter.
    * If yes, it returns true to say that sliding should be blocked, otherwise not.
    * @param number boundaryIndex that could be either the beginning index (0) or the last index
    *  of images (this.images.length - 1).

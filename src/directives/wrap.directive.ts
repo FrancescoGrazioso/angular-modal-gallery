@@ -28,7 +28,7 @@ import { Directive, ElementRef, Input, OnChanges, OnInit, Renderer2 } from '@ang
  * Directive to change the flex-wrap css property of an element.
  */
 @Directive({
-  selector: '[ksWrap]'
+  selector: '[fgWrap]'
 })
 export class WrapDirective implements OnInit, OnChanges {
   /**

@@ -25,7 +25,7 @@
 import { Directive, EventEmitter, HostListener, Input, Output } from '@angular/core';
 
 @Directive({
-  selector: '[ksKeyboardNavigation]'
+  selector: '[fgKeyboardNavigation]'
 })
 export class KeyboardNavigationDirective {
   @Input() isOpen: boolean;

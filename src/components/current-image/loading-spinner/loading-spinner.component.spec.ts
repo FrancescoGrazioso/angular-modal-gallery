@@ -24,12 +24,12 @@ import { By } from '@angular/platform-browser';
 import { LoadingSpinnerComponent } from './loading-spinner.component';
 import { AccessibilityConfig } from '../../../model/accessibility.interface';
 import { LoadingConfig, LoadingType } from '../../../model/loading-config.interface';
-import { KS_DEFAULT_ACCESSIBILITY_CONFIG } from '../../../components/accessibility-default';
+import { fg_DEFAULT_ACCESSIBILITY_CONFIG } from '../../../components/accessibility-default';
 
 let comp: LoadingSpinnerComponent;
 let fixture: ComponentFixture<LoadingSpinnerComponent>;
 
-const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, KS_DEFAULT_ACCESSIBILITY_CONFIG);
+const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, fg_DEFAULT_ACCESSIBILITY_CONFIG);
 CUSTOM_ACCESSIBILITY.loadingSpinnerAriaLabel = 'custom loadingSpinnerAriaLabel';
 CUSTOM_ACCESSIBILITY.loadingSpinnerTitle = 'custom loadingSpinnerTitle';
 
@@ -65,15 +65,15 @@ describe('LoadingSpinnerComponent', () => {
     VISIBLE_CONFIG.forEach((loadingConfig: LoadingConfig, i: number) => {
       it(`should display loading spinner with default accessibility config. Test i=${i}`, () => {
         comp.loadingConfig = loadingConfig;
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         fixture.detectChanges();
 
         const element: DebugElement = fixture.debugElement;
         const spinnerContainer: DebugElement = element.query(By.css('div'));
         expect(spinnerContainer).not.toBeUndefined();
         expect(spinnerContainer.name).toBe('div');
-        expect(spinnerContainer.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.loadingSpinnerAriaLabel);
-        expect(spinnerContainer.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.loadingSpinnerTitle);
+        expect(spinnerContainer.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.loadingSpinnerAriaLabel);
+        expect(spinnerContainer.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.loadingSpinnerTitle);
 
         switch (loadingConfig.type) {
           case LoadingType.STANDARD:

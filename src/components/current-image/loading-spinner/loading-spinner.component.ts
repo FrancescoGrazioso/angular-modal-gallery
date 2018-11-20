@@ -31,7 +31,7 @@ import { LoadingConfig, LoadingType } from '../../../model/loading-config.interf
  * Component with the loading spinner
  */
 @Component({
-  selector: 'ks-loading-spinner',
+  selector: 'fg-loading-spinner',
   styleUrls: [
     'style-loading-spinner-standard.css',
     'style-loading-spinner-dots.css',

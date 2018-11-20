@@ -54,7 +54,7 @@ import { DotsConfig } from '../../model/dots-config.interface';
 import { CurrentImageComponent, ImageLoadEvent } from '../current-image/current-image.component';
 import { InternalLibImage } from '../../model/image-internal.class';
 import { AdvancedLayout, PlainGalleryConfig } from '../../model/plain-gallery-config.interface';
-import { KS_DEFAULT_ACCESSIBILITY_CONFIG } from '../accessibility-default';
+import { fg_DEFAULT_ACCESSIBILITY_CONFIG } from '../accessibility-default';
 import { Subscription } from 'rxjs/Subscription';
 import { CurrentImageConfig } from '../../model/current-image-config.interface';
 
@@ -62,8 +62,8 @@ import { CurrentImageConfig } from '../../model/current-image-config.interface';
  * Main Component of this library with both the plain and modal galleries.
  */
 @Component({
-  selector: 'ks-modal-gallery',
-  exportAs: 'ksModalGallery',
+  selector: 'fg-modal-gallery',
+  exportAs: 'fgModalGallery',
   styleUrls: ['modal-gallery.scss'],
   templateUrl: 'modal-gallery.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -115,7 +115,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
    * Object of type `AccessibilityConfig` to init custom accessibility features.
    * For instance, it contains titles, alt texts, aria-labels and so on.
    */
-  @Input() accessibilityConfig: AccessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+  @Input() accessibilityConfig: AccessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
   /**
    * Object of type `KeyboardConfig` to assign custom keys to ESC, RIGHT and LEFT keyboard's actions.
    */
@@ -182,7 +182,7 @@ export class ModalGalleryComponent implements OnInit, OnDestroy, OnChanges {
   /**
    * HostListener to catch browser's back button and destroy the gallery.
    * This prevents weired behaviour about scrolling.
-   * Added to fix this issue: https://github.com/Ks89/angular-modal-gallery/issues/159
+   * Added to fix this issue: https://github.com/fg89/angular-modal-gallery/issues/159
    */
   @HostListener('window:popstate', ['$event'])
   onPopState(e: Event) {

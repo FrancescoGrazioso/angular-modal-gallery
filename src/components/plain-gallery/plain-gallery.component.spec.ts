@@ -28,7 +28,7 @@ import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 import { AccessibilityConfig } from '../../model/accessibility.interface';
-import { KS_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
+import { fg_DEFAULT_ACCESSIBILITY_CONFIG } from '../../components/accessibility-default';
 import { InternalLibImage } from '../../model/image-internal.class';
 import { PlainGalleryComponent } from './plain-gallery.component';
 import { Size } from '../../model/size.interface';
@@ -41,7 +41,7 @@ import { LineLayout, GridLayout, PlainGalleryStrategy } from '../../model/plain-
 let comp: PlainGalleryComponent;
 let fixture: ComponentFixture<PlainGalleryComponent>;
 
-const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, KS_DEFAULT_ACCESSIBILITY_CONFIG);
+const CUSTOM_ACCESSIBILITY: AccessibilityConfig = Object.assign({}, fg_DEFAULT_ACCESSIBILITY_CONFIG);
 CUSTOM_ACCESSIBILITY.plainGalleryContentAriaLabel = 'custom plainGalleryContentAriaLabel';
 CUSTOM_ACCESSIBILITY.plainGalleryContentTitle = 'custom plainGalleryContentTitle';
 
@@ -121,7 +121,7 @@ describe('PlainGalleryComponent', () => {
       comp.showGallery = true;
       comp.images = IMAGES;
       // comp.plainGalleryConfig = {};
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.ngOnInit();
       fixture.detectChanges();
 
@@ -129,10 +129,10 @@ describe('PlainGalleryComponent', () => {
 
       const plainGallery: DebugElement = element.query(By.css('div.plain-container'));
       expect(plainGallery.name).toBe('div');
-      expect(plainGallery.attributes['ksDirection']).toBe('');
-      expect(plainGallery.attributes['ksWrap']).toBe('');
-      expect(plainGallery.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
-      expect(plainGallery.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
+      expect(plainGallery.attributes['fgDirection']).toBe('');
+      expect(plainGallery.attributes['fgWrap']).toBe('');
+      expect(plainGallery.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
+      expect(plainGallery.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
       expect(plainGallery.styles['flex-direction']).toBe('row');
       expect(plainGallery.styles['justify-content']).toBe('flex-start');
 
@@ -140,7 +140,7 @@ describe('PlainGalleryComponent', () => {
       expect(plainImages.length).toBe(IMAGES.length);
       expect(plainImages[0].name).toBe('img');
       expect(plainImages[0].attributes['role']).toBe('img');
-      expect(plainImages[0].attributes['ksSize']).toBe('');
+      expect(plainImages[0].attributes['fgSize']).toBe('');
       expect(plainImages[0].properties['src']).toBe(IMAGES[0].modal.img);
       expect(plainImages[0].attributes['class']).toBe('image');
       expect(plainImages[0].attributes['aria-label']).toBeNull();
@@ -152,7 +152,7 @@ describe('PlainGalleryComponent', () => {
 
       expect(plainImages[1].name).toBe('img');
       expect(plainImages[1].attributes['role']).toBe('img');
-      expect(plainImages[1].attributes['ksSize']).toBe('');
+      expect(plainImages[1].attributes['fgSize']).toBe('');
       expect(plainImages[1].properties['src']).toBe(IMAGES[1].modal.img);
       expect(plainImages[1].attributes['class']).toBe('image');
       expect(plainImages[1].attributes['aria-label']).toBeNull();
@@ -164,7 +164,7 @@ describe('PlainGalleryComponent', () => {
 
       expect(plainImages[2].name).toBe('img');
       expect(plainImages[2].attributes['role']).toBe('img');
-      expect(plainImages[2].attributes['ksSize']).toBe('');
+      expect(plainImages[2].attributes['fgSize']).toBe('');
       expect(plainImages[2].properties['src']).toBe(IMAGES[2].plain.img);
       expect(plainImages[2].attributes['class']).toBe('image');
       expect(plainImages[2].attributes['aria-label']).toBe('arial label 2');
@@ -176,7 +176,7 @@ describe('PlainGalleryComponent', () => {
 
       expect(plainImages[3].name).toBe('img');
       expect(plainImages[3].attributes['role']).toBe('img');
-      expect(plainImages[3].attributes['ksSize']).toBe('');
+      expect(plainImages[3].attributes['fgSize']).toBe('');
       expect(plainImages[3].properties['src']).toBe(IMAGES[3].modal.img);
       expect(plainImages[3].attributes['class']).toBe('image');
       expect(plainImages[3].attributes['aria-label']).toBeNull();
@@ -188,7 +188,7 @@ describe('PlainGalleryComponent', () => {
 
       expect(plainImages[4].name).toBe('img');
       expect(plainImages[4].attributes['role']).toBe('img');
-      expect(plainImages[4].attributes['ksSize']).toBe('');
+      expect(plainImages[4].attributes['fgSize']).toBe('');
       expect(plainImages[4].properties['src']).toBe(IMAGES[4].plain.img);
       expect(plainImages[4].attributes['class']).toBe('image');
       expect(plainImages[4].attributes['aria-label']).toBeNull();
@@ -234,7 +234,7 @@ describe('PlainGalleryComponent', () => {
             'flex-start'
           )
         };
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.ngOnInit();
         fixture.detectChanges();
 
@@ -267,7 +267,7 @@ describe('PlainGalleryComponent', () => {
           'flex-start'
         )
       };
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.ngOnInit();
       fixture.detectChanges();
 
@@ -289,7 +289,7 @@ describe('PlainGalleryComponent', () => {
           'space-around'
         )
       };
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.ngOnInit();
       fixture.detectChanges();
 
@@ -311,7 +311,7 @@ describe('PlainGalleryComponent', () => {
           'flex-start'
         )
       };
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.ngOnInit();
       fixture.detectChanges();
 
@@ -319,10 +319,10 @@ describe('PlainGalleryComponent', () => {
 
       const plainGallery: DebugElement = element.query(By.css('div.plain-container'));
       expect(plainGallery.name).toBe('div');
-      expect(plainGallery.attributes['ksDirection']).toBe('');
-      expect(plainGallery.attributes['ksWrap']).toBe('');
-      expect(plainGallery.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
-      expect(plainGallery.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
+      expect(plainGallery.attributes['fgDirection']).toBe('');
+      expect(plainGallery.attributes['fgWrap']).toBe('');
+      expect(plainGallery.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
+      expect(plainGallery.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
       expect(plainGallery.styles['flex-direction']).toBe('column');
       expect(plainGallery.styles['justify-content']).toBe('flex-start');
 
@@ -330,7 +330,7 @@ describe('PlainGalleryComponent', () => {
       expect(plainImages.length).toBe(2);
       expect(plainImages[0].name).toBe('img');
       expect(plainImages[0].attributes['role']).toBe('img');
-      expect(plainImages[0].attributes['ksSize']).toBe('');
+      expect(plainImages[0].attributes['fgSize']).toBe('');
       expect(plainImages[0].properties['src']).toBe(IMAGES[0].modal.img);
       expect(plainImages[0].attributes['class']).toBe('image');
       expect(plainImages[0].attributes['aria-label']).toBeNull();
@@ -342,7 +342,7 @@ describe('PlainGalleryComponent', () => {
 
       expect(plainImages[1].name).toBe('img');
       expect(plainImages[1].attributes['role']).toBe('img');
-      expect(plainImages[1].attributes['ksSize']).toBe('');
+      expect(plainImages[1].attributes['fgSize']).toBe('');
       expect(plainImages[1].properties['src']).toBe(IMAGES[1].modal.img);
       expect(plainImages[1].attributes['class']).toBe('image');
       expect(plainImages[1].attributes['aria-label']).toBeNull();
@@ -361,7 +361,7 @@ describe('PlainGalleryComponent', () => {
         strategy: PlainGalleryStrategy.GRID,
         layout: new GridLayout({width: '80px', height: '80px'}, {length: 2, wrap: true})
       };
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.ngOnInit();
       fixture.detectChanges();
 
@@ -369,8 +369,8 @@ describe('PlainGalleryComponent', () => {
 
       const plainGallery: DebugElement = element.query(By.css('div.plain-container'));
       expect(plainGallery.name).toBe('div');
-      expect(plainGallery.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
-      expect(plainGallery.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
+      expect(plainGallery.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
+      expect(plainGallery.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
       expect(plainGallery.styles['flex-wrap']).toBe('wrap');
 
       const plainImages: DebugElement[] = plainGallery.children;
@@ -389,7 +389,7 @@ describe('PlainGalleryComponent', () => {
         ),
         advanced: {aTags: true, additionalBackground: '50% 50%/cover'}
       };
-      comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+      comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
       comp.ngOnInit();
       fixture.detectChanges();
 
@@ -397,17 +397,17 @@ describe('PlainGalleryComponent', () => {
 
       const plainGallery: DebugElement = element.query(By.css('div.plain-container'));
       expect(plainGallery.name).toBe('div');
-      expect(plainGallery.attributes['ksDirection']).toBe('');
-      expect(plainGallery.attributes['ksWrap']).toBe('');
-      expect(plainGallery.properties['title']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
-      expect(plainGallery.attributes['aria-label']).toBe(KS_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
+      expect(plainGallery.attributes['fgDirection']).toBe('');
+      expect(plainGallery.attributes['fgWrap']).toBe('');
+      expect(plainGallery.properties['title']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentTitle);
+      expect(plainGallery.attributes['aria-label']).toBe(fg_DEFAULT_ACCESSIBILITY_CONFIG.plainGalleryContentAriaLabel);
       // expect(plainGallery.styles['flex-direction']).toBe('row');
       expect(plainGallery.styles['justify-content']).toBe('flex-start');
 
       const plainImages: DebugElement[] = plainGallery.children;
       expect(plainImages.length).toBe(IMAGES.length);
       expect(plainImages[0].name).toBe('a');
-      expect(plainImages[0].attributes['ksSize']).toBe('');
+      expect(plainImages[0].attributes['fgSize']).toBe('');
       // expect(plainImages[0].attributes['href']).toBe('#');
       expect(plainImages[0].attributes['class']).toBe('a-tag-image');
       // expect(plainImages[0].attributes['aria-label']).toBe(IMAGES[0].modal.ariaLabel);
@@ -418,7 +418,7 @@ describe('PlainGalleryComponent', () => {
       expect(plainImages[0].styles.background).toBe(`url("${IMAGES[0].modal.img}") 50% 50%/cover`);
 
       expect(plainImages[1].name).toBe('a');
-      expect(plainImages[1].attributes['ksSize']).toBe('');
+      expect(plainImages[1].attributes['fgSize']).toBe('');
       // expect(plainImages[1].attributes['href']).toBe('#');
       expect(plainImages[1].attributes['class']).toBe('a-tag-image');
       // expect(plainImages[1].attributes['aria-label']).toBe(IMAGES[0].modal.ariaLabel);
@@ -429,7 +429,7 @@ describe('PlainGalleryComponent', () => {
       expect(plainImages[1].styles.background).toBe(`url("${IMAGES[1].modal.img}") 50% 50%/cover`);
 
       expect(plainImages[2].name).toBe('a');
-      expect(plainImages[2].attributes['ksSize']).toBe('');
+      expect(plainImages[2].attributes['fgSize']).toBe('');
       // expect(plainImages[2].attributes['href']).toBe('#');
       expect(plainImages[2].attributes['class']).toBe('a-tag-image');
       // expect(plainImages[2].attributes['aria-label']).toBe(IMAGES[0].modal.ariaLabel);
@@ -440,7 +440,7 @@ describe('PlainGalleryComponent', () => {
       expect(plainImages[2].styles.background).toBe(`url("${IMAGES[2].plain.img}") 50% 50%/cover`);
 
       expect(plainImages[3].name).toBe('a');
-      expect(plainImages[3].attributes['ksSize']).toBe('');
+      expect(plainImages[3].attributes['fgSize']).toBe('');
       // expect(plainImages[3].attributes['href']).toBe('#');
       expect(plainImages[3].attributes['class']).toBe('a-tag-image');
       // expect(plainImages[3].attributes['aria-label']).toBe(IMAGES[0].modal.ariaLabel);
@@ -451,7 +451,7 @@ describe('PlainGalleryComponent', () => {
       expect(plainImages[3].styles.background).toBe(`url("${IMAGES[3].modal.img}") 50% 50%/cover`);
 
       expect(plainImages[4].name).toBe('a');
-      expect(plainImages[4].attributes['ksSize']).toBe('');
+      expect(plainImages[4].attributes['fgSize']).toBe('');
       // expect(plainImages[4].attributes['href']).toBe('#');
       expect(plainImages[4].attributes['class']).toBe('a-tag-image');
       // expect(plainImages[4].attributes['aria-label']).toBe(IMAGES[0].modal.ariaLabel);
@@ -481,7 +481,7 @@ describe('PlainGalleryComponent', () => {
           ),
           advanced: {aTags: true, additionalBackground: '50% 50%/cover'}
         };
-        comp.accessibilityConfig = KS_DEFAULT_ACCESSIBILITY_CONFIG;
+        comp.accessibilityConfig = fg_DEFAULT_ACCESSIBILITY_CONFIG;
         comp.ngOnInit();
         fixture.detectChanges();
 

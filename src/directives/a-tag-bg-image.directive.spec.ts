@@ -66,23 +66,23 @@ const length: number = expectedModal.length + expectedPlain.length + expectedWro
   expectedWithNoImages.length + expectedModalBase64.length + expectedPlainBase64.length;
 
 @Component({
-  selector: 'ks-test-atagbgimage',
+  selector: 'fg-test-atagbgimage',
   template: `
-    <div ksATagBgImage [image]="images[0]" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="images[0]" [style]="''"></div>
-    <div ksATagBgImage [image]="images[1]" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="images[1]" [style]="''"></div>
-    <div ksATagBgImage [image]="images[2]" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="images[3]" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="null" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="null" [style]="''"></div>
-    <div ksATagBgImage [image]="undefined" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="undefined" [style]="''"></div>
+    <div fgATagBgImage [image]="images[0]" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="images[0]" [style]="''"></div>
+    <div fgATagBgImage [image]="images[1]" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="images[1]" [style]="''"></div>
+    <div fgATagBgImage [image]="images[2]" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="images[3]" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="null" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="null" [style]="''"></div>
+    <div fgATagBgImage [image]="undefined" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="undefined" [style]="''"></div>
 
-    <div ksATagBgImage [image]="images[4]" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="images[4]" [style]="''"></div>
-    <div ksATagBgImage [image]="images[5]" [style]="'50% 50% / cover'"></div>
-    <div ksATagBgImage [image]="images[5]" [style]="''"></div>
+    <div fgATagBgImage [image]="images[4]" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="images[4]" [style]="''"></div>
+    <div fgATagBgImage [image]="images[5]" [style]="'50% 50% / cover'"></div>
+    <div fgATagBgImage [image]="images[5]" [style]="''"></div>
   `
 })
 class TestATagBgImageComponent {
@@ -116,7 +116,7 @@ describe('ATagBgImageDirective', () => {
     fixture.detectChanges();
     return fixture.whenStable().then(() => {
       fixture.detectChanges();
-      bareElement = fixture.debugElement.query(By.css('div:not(ksATagBgImage)'));
+      bareElement = fixture.debugElement.query(By.css('div:not(fgATagBgImage)'));
       des = fixture.debugElement.queryAll(By.directive(ATagBgImageDirective));
     });
   });
@@ -198,7 +198,7 @@ describe('ATagBgImageDirective', () => {
     });
 
     it('should check expected results for bare <div> without this directive', () => {
-      expect(bareElement.properties['ksATagBgImage']).toBeUndefined();
+      expect(bareElement.properties['fgATagBgImage']).toBeUndefined();
     });
   });
 });

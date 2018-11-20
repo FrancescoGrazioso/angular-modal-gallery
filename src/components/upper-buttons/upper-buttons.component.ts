@@ -31,11 +31,11 @@ import { Image } from '../../model/image.class';
 import { ButtonConfig, ButtonEvent, ButtonsConfig, ButtonsStrategy, ButtonType, WHITELIST_BUTTON_TYPES } from '../../model/buttons-config.interface';
 
 import {
-  KS_DEFAULT_BTN_CLOSE,
-  KS_DEFAULT_BTN_DELETE,
-  KS_DEFAULT_BTN_DOWNLOAD,
-  KS_DEFAULT_BTN_EXTURL,
-  KS_DEFAULT_BTN_FULL_SCREEN
+  fg_DEFAULT_BTN_CLOSE,
+  fg_DEFAULT_BTN_DELETE,
+  fg_DEFAULT_BTN_DOWNLOAD,
+  fg_DEFAULT_BTN_EXTURL,
+  fg_DEFAULT_BTN_FULL_SCREEN
 } from './upper-buttons-default';
 
 import { NEXT } from '../../utils/user-input.util';
@@ -52,7 +52,7 @@ export interface InternalButtonConfig extends ButtonConfig {
  * Also it emits click events as outputs.
  */
 @Component({
-  selector: 'ks-upper-buttons',
+  selector: 'fg-upper-buttons',
   styleUrls: ['upper-buttons.scss'],
   templateUrl: 'upper-buttons.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -69,31 +69,31 @@ export class UpperButtonsComponent extends AccessibleComponent implements OnInit
   @Input() buttonsConfig: ButtonsConfig;
 
   /**
-   * Output to emit clicks on refresh button. The payload contains a `ButtonEvent`.
+   * Output to emit clicfg on refresh button. The payload contains a `ButtonEvent`.
    */
   @Output() refresh: EventEmitter<ButtonEvent> = new EventEmitter<ButtonEvent>();
   /**
-   * Output to emit clicks on delete button. The payload contains a `ButtonEvent`.
+   * Output to emit clicfg on delete button. The payload contains a `ButtonEvent`.
    */
   @Output() delete: EventEmitter<ButtonEvent> = new EventEmitter<ButtonEvent>();
   /**
-   * Output to emit clicks on navigate button. The payload contains a `ButtonEvent`.
+   * Output to emit clicfg on navigate button. The payload contains a `ButtonEvent`.
    */
   @Output() navigate: EventEmitter<ButtonEvent> = new EventEmitter<ButtonEvent>();
   /**
-   * Output to emit clicks on download button. The payload contains a `ButtonEvent`.
+   * Output to emit clicfg on download button. The payload contains a `ButtonEvent`.
    */
   @Output() download: EventEmitter<ButtonEvent> = new EventEmitter<ButtonEvent>();
   /**
-   * Output to emit clicks on close button. The payload contains a `ButtonEvent`.
+   * Output to emit clicfg on close button. The payload contains a `ButtonEvent`.
    */
   @Output() close: EventEmitter<ButtonEvent> = new EventEmitter<ButtonEvent>();
   /**
-   * Output to emit clicks on full-screen button. The payload contains a `ButtonEvent`.
+   * Output to emit clicfg on full-screen button. The payload contains a `ButtonEvent`.
    */
   @Output() fullscreen: EventEmitter<ButtonEvent> = new EventEmitter<ButtonEvent>();
   /**
-   * Output to emit clicks on all custom buttons. The payload contains a `ButtonEvent`.
+   * Output to emit clicfg on all custom buttons. The payload contains a `ButtonEvent`.
    */
   @Output() customEmit: EventEmitter<ButtonEvent> = new EventEmitter<ButtonEvent>();
 
@@ -111,22 +111,22 @@ export class UpperButtonsComponent extends AccessibleComponent implements OnInit
   /**
    * Default buttons array for standard configuration
    */
-  private defaultButtonsDefault: ButtonConfig[] = [KS_DEFAULT_BTN_CLOSE];
+  private defaultButtonsDefault: ButtonConfig[] = [fg_DEFAULT_BTN_CLOSE];
   /**
    * Default buttons array for simple configuration
    */
-  private simpleButtonsDefault: ButtonConfig[] = [KS_DEFAULT_BTN_DOWNLOAD, ...this.defaultButtonsDefault];
+  private simpleButtonsDefault: ButtonConfig[] = [fg_DEFAULT_BTN_DOWNLOAD, ...this.defaultButtonsDefault];
   /**
    * Default buttons array for advanced configuration
    */
-  private advancedButtonsDefault: ButtonConfig[] = [KS_DEFAULT_BTN_EXTURL, ...this.simpleButtonsDefault];
+  private advancedButtonsDefault: ButtonConfig[] = [fg_DEFAULT_BTN_EXTURL, ...this.simpleButtonsDefault];
   /**
    * Default buttons array for full configuration
    */
   private fullButtonsDefault: ButtonConfig[] = [
-    /*KS_DEFAULT_BTN_REFRESH, */
-    KS_DEFAULT_BTN_FULL_SCREEN,
-    KS_DEFAULT_BTN_DELETE,
+    /*fg_DEFAULT_BTN_REFRESH, */
+    fg_DEFAULT_BTN_FULL_SCREEN,
+    fg_DEFAULT_BTN_DELETE,
     ...this.advancedButtonsDefault
   ];
 

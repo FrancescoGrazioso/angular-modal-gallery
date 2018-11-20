@@ -3,7 +3,7 @@ import { AccessibilityConfig } from '../model/accessibility.interface';
 /**
  * Default accessibility configuration.
  */
-export const KS_DEFAULT_ACCESSIBILITY_CONFIG: AccessibilityConfig = {
+export const fg_DEFAULT_ACCESSIBILITY_CONFIG: AccessibilityConfig = {
   backgroundAriaLabel: 'Modal gallery full screen background',
   backgroundTitle: '',
 

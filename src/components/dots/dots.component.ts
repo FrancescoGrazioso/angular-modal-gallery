@@ -38,7 +38,7 @@ import { getIndex } from '../../utils/image.util';
  * Component with clickable dots (small circles) to navigate between images inside the modal gallery.
  */
 @Component({
-  selector: 'ks-dots',
+  selector: 'fg-dots',
   styleUrls: ['dots.scss'],
   templateUrl: 'dots.html',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -64,7 +64,7 @@ export class DotsComponent extends AccessibleComponent implements OnInit {
    */
   @Input() accessibilityConfig: AccessibilityConfig;
   /**
-   * Output to emit clicks on dots. The payload contains a number that represent
+   * Output to emit clicfg on dots. The payload contains a number that represent
    * the index of the clicked dot.
    */
   @Output() clickDot: EventEmitter<number> = new EventEmitter<number>();
@@ -87,7 +87,7 @@ export class DotsComponent extends AccessibleComponent implements OnInit {
 
   /**
    * Method to check if an image is active (i.e. the current image).
-   * It checks currentImage and images to prevent errors.
+   * It checfg currentImage and images to prevent errors.
    * @param number index of the image to check if it's active or not
    * @returns boolean true if is active (and input params are valid), false otherwise
    */

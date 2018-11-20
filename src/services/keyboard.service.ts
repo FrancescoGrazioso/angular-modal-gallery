@@ -52,7 +52,7 @@ export class KeyboardService {
 
     this.shortcuts = this.config && this.config.shortcuts ? this.config.shortcuts : ['ctrl+s', 'meta+s'];
 
-    // temporary workaround to fix this issue: https://github.com/Ks89/angular-modal-gallery/issues/142
+    // temporary workaround to fix this issue: https://github.com/fg89/angular-modal-gallery/issues/142
     if (this.config && !this.config.disableSsrWorkaround) {
       // To prevent issues with angular-universal on server-side
       if (typeof window !== 'undefined') {
@@ -67,7 +67,7 @@ export class KeyboardService {
    * @param (e: ExtendedKeyboardEvent, combo: string) => any onBind callback function to add shortcuts
    */
   add(onBind: (e: ExtendedKeyboardEvent, combo: string) => any) {
-    // temporary workaround to fix this issue: https://github.com/Ks89/angular-modal-gallery/issues/142
+    // temporary workaround to fix this issue: https://github.com/fg89/angular-modal-gallery/issues/142
     if (this.config && !this.config.disableSsrWorkaround) {
       // To prevent issues with angular-universal on server-side
       if (typeof window !== 'undefined') {
@@ -86,10 +86,10 @@ export class KeyboardService {
 
   /**
    * Method to reset all listeners. Please, call this function when needed
-   * to free resources ad prevent leaks.
+   * to free resources ad prevent leafg.
    */
   reset() {
-    // temporary workaround to fix this issue: https://github.com/Ks89/angular-modal-gallery/issues/142
+    // temporary workaround to fix this issue: https://github.com/fg89/angular-modal-gallery/issues/142
     if (this.config && !this.config.disableSsrWorkaround) {
       // To prevent issues with angular-universal on server-side
       if (typeof window !== 'undefined') {

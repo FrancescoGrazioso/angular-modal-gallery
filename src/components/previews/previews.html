@@ -16,7 +16,7 @@
       <img *ngIf="preview?.modal?.img"
            class="inside preview-image {{isActive(preview) ? 'active' : ''}}{{!configPreview.clickable ? ' unclickable' : ''}}"
            [src]="preview.plain?.img ? preview.plain.img : preview.modal.img"
-           ksSize [sizeConfig]="{width: configPreview.size ? configPreview.size.width : defaultPreviewSize.width,
+           fgSize [sizeConfig]="{width: configPreview.size ? configPreview.size.width : defaultPreviewSize.width,
                                  height: configPreview.size ? configPreview.size.height : defaultPreviewSize.height}"
            [attr.aria-label]="preview.modal.ariaLabel ? preview.modal.ariaLabel : ''"
            [title]="preview.modal.title ? preview.modal.title : ''"

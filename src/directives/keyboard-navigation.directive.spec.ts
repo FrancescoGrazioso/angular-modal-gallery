@@ -29,9 +29,9 @@
 // import { KeyboardNavigationDirective } from './keyboard-navigation.directive';
 //
 // @Component({
-//   selector: 'ks-test-keyboard-navigation',
+//   selector: 'fg-test-keyboard-navigation',
 //   template: `
-//     <main ksKeyboardNavigation [isOpen]="true" (keyPress)="onKeyPress($event)"></main>
+//     <main fgKeyboardNavigation [isOpen]="true" (keyPress)="onKeyPress($event)"></main>
 //   `
 // })
 // class TestKeyboardNavigationComponent {
@@ -78,7 +78,7 @@
 //     it(`should check for this directive`, () => {
 //       const clickOutsideDirective: DebugElement = fixture.debugElement.query(By.directive(KeyboardNavigationDirective));
 //       expect(clickOutsideDirective.name).toBe('main');
-//       expect(clickOutsideDirective.attributes['ksKeyboardNavigation']).toBe('');
+//       expect(clickOutsideDirective.attributes['fgKeyboardNavigation']).toBe('');
 //     });
 //
 //     it(`should close the modal gallery after a click`, () => {
