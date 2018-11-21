@@ -1,4 +1,4 @@
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/FrancescoGrazioso)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](paypal.me/FrancescoGrazioso)
 
 *Do you like angular-modal-gallery? Please, add a 'star' to support this library*
 
@@ -111,7 +111,9 @@ SOFTWARE.
 
 <br/>
 
-If you like my projects you can do a free donation here [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/FrancescoGrazioso)
+If you like my projects you can do a free donation here [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)]
+<br>
+(paypal.me/FrancescoGrazioso)
 
 <br/>
 
