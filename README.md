@@ -1,7 +1,3 @@
-![npm@latest](https://badge.fury.io/js/%40ks89%2Fangular-modal-gallery.svg)
-
-[![npm]](https://www.npmjs.com/package/@francescograzioso/modal-angular-gallery)
-
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/FrancescoGrazioso)
 
 *Do you like angular-modal-gallery? Please, add a 'star' to support this library*
@@ -54,6 +50,11 @@ It's also possible to navigate between these modal images with both **keyboard a
 - `npm i @francescograzioso/modal-angular-gallery`
 - `npm install --save hammerjs mousetrap rxjs-compat`
 - `npm install --save-dev @types/mousetrap @types/hammerjs`
+
+NPM Link
+
+<a href="https://www.npmjs.com/package/@francescograzioso/modal-angular-gallery">Angular Modal Gallery</a>
+
 
 
 ## FAQS
