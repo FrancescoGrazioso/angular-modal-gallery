@@ -1,4 +1,4 @@
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](paypal.me/FrancescoGrazioso)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](www.paypal.me/FrancescoGrazioso)
 
 *Do you like angular-modal-gallery? Please, add a 'star' to support this library*
 
@@ -108,12 +108,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-<br/>
-
-If you like my projects you can do a free donation here [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)]
-<br>
-(paypal.me/FrancescoGrazioso)
 
 <br/>
 
