@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d8ee7a1-af0f-475c-901d-fcf07d652ae5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessibility-default.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessibility-default.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/accessible.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/accessible.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/background/background.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/background/background.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/current-image/current-image.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/current-image/current-image.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/current-image/current-image.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/current-image/current-image.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/current-image/current-image.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/current-image/current-image.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/current-image/current-image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/current-image/current-image.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/current-image/loading-spinner/loading-spinner.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/current-image/loading-spinner/loading-spinner.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/current-image/loading-spinner/loading-spinner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/current-image/loading-spinner/loading-spinner.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dots/dots.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dots/dots.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dots/dots.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dots/dots.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal-gallery/modal-gallery.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal-gallery/modal-gallery.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal-gallery/modal-gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal-gallery/modal-gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/plain-gallery/plain-gallery.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/plain-gallery/plain-gallery.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/plain-gallery/plain-gallery.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/plain-gallery/plain-gallery.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/plain-gallery/plain-gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/plain-gallery/plain-gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/previews/previews.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/previews/previews.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/previews/previews.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/previews/previews.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/previews/previews.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/previews/previews.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons-default.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons-default.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/upper-buttons/upper-buttons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/a-tag-bg-image.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/a-tag-bg-image.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/a-tag-bg-image.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/a-tag-bg-image.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/click-outside.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/click-outside.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/click-outside.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/click-outside.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/description.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/description.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/description.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/description.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/direction.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/direction.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/direction.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/direction.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/keyboard-navigation.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/keyboard-navigation.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/keyboard-navigation.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/keyboard-navigation.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/size.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/size.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/size.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/size.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/wrap.directive.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/wrap.directive.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/directives/wrap.directive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/directives/wrap.directive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/keyboard-service-config.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/keyboard-service-config.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/keyboard.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/keyboard.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="08f74696-c713-4d16-9a91-63bc69ce5f5e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -55,67 +12,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="1152490120">
+    <session id="-303145280">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="TypeScriptServerServiceImpl" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="ts" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="TypeScript" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/current-image/current-image.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-545" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/current-image/current-image.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#1116#1260#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ks</find>
+      <find>fg89</find>
+      <find>Stefano Cappa</find>
     </findStrings>
     <replaceStrings>
       <replace>fg</replace>
+      <replace>fg96</replace>
+      <replace>Francesco Grazioso</replace>
     </replaceStrings>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
@@ -130,9 +48,11 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="420" />
+    <option name="y" value="32" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -143,26 +63,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="angular-modal-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angular-modal-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="modal-angular-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="modal-angular-gallery" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="angular-modal-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angular-modal-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="angular-modal-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angular-modal-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="angular-modal-gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="angular-modal-gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="current-image" type="462c0819:PsiDirectoryNode" />
+              <item name="modal-angular-gallery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="modal-angular-gallery" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -173,10 +80,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/elleci" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -195,31 +102,26 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3d8ee7a1-af0f-475c-901d-fcf07d652ae5" name="Default Changelist" comment="" />
-      <created>1542743257884</created>
+      <changelist id="08f74696-c713-4d16-9a91-63bc69ce5f5e" name="Default Changelist" comment="" />
+      <created>1542807644223</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1542743257884</updated>
-      <workItem from="1542743262101" duration="186000" />
+      <updated>1542807644223</updated>
+      <workItem from="1542807646447" duration="160000" />
+      <workItem from="1542807903244" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186000" />
+    <option name="totallyTimeSpent" value="181000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="npm" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -227,6 +129,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -237,23 +143,5 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/current-image/current-image.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-545" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/current-image/current-image.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="24" column="7" lean-forward="true" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#1116#1260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

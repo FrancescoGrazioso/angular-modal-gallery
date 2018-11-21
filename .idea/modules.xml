@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/angular-modal-gallery.iml" filepath="$PROJECT_DIR$/.idea/angular-modal-gallery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modal-angular-gallery.iml" filepath="$PROJECT_DIR$/.idea/modal-angular-gallery.iml" />
     </modules>
   </component>
 </project>
