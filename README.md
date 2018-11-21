@@ -1,18 +1,14 @@
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/FrancescoGrazioso)
 
-*Do you like angular-modal-gallery? Please, add a 'star' to support this library*
+*Do you like modal-angular-gallery? Please, add a 'star' to support this library*
 
 <br>
 <br>
-
-**angular-modal-gallery 7.0.0 WORK IN PROGRESS**
-It will be released this autumn with some great improvements and new features. Also I want to support Angular 7 Ivy Renderer (aka Renderer3)
-For more info, watch this issue: [7.0.0 major release](https://github.com/Ks89/angular-modal-gallery/issues/144)
 
 <br><br><br>
 
 
-**angular-modal-gallery** is an Angular library (SSR compatible) to create image galleries of **clickable thumbnails**.
+**modal-angular-gallery** is an Angular library (SSR compatible) to create image galleries of **clickable thumbnails**.
 After a click, it will display a **modal window with full screen images**.
 Modal view is composed by **buttons**, the **current image** and optionally, also navigation **dots** and **previews**.
 <br>
@@ -62,8 +58,8 @@ NPM Link
 1. Question: **I have this error: `Cannot find name 'MousetrapInstance'`. What can I do?**<br>
    **Answer**: Simply run `npm i --save-dev @types/mousetrap`
 2. Question: **I have this error: `Error: No provider for KeyboardService`. What can I do?**<br>
-   **Answer**: You forgot to add .forRoot(), so KeyboardService will be never available as a service. Please read section "Installation" [HERE](https://ks89.github.io/angular-modal-gallery-2018-v6.github.io/gettingStarted).
-   This is a common design pattern for Angular libraries. For more info check also [this issue](https://github.com/Ks89/angular-modal-gallery/issues/94).
+   **Answer**: You forgot to add .forRoot(), so KeyboardService will be never available as a service. Please read section "Installation" [HERE](https://ks89.github.io/modal-angular-gallery-2018-v6.github.io/gettingStarted).
+   This is a common design pattern for Angular libraries. For more info check also [this issue](https://github.com/Ks89/modal-angular-gallery/issues/94).
 3. Question: **How can I remove images using DELETE button without issues?**<br>
    **Answer**: **You cannot change the input image array. Instead, you should reassign it with a newer array** without the deleted element.
    In other words, **you must think in a functional way**, without changing the input array of images.
